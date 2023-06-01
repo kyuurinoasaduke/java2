@@ -1,3 +1,4 @@
+import java.util.*;
 public class HeroApp{
 	public static void main(String[] args){
 		//Heroインスタンスの生成
@@ -25,12 +26,34 @@ public class HeroApp{
 		ms[2].suffix='C';
 
 		for(Matango m:ms){
-			m.run();
+			m.appear();
 		}
+		h1.attack(ms[0]);
 
+		Sword s1=new Sword();
+		s.name="麵棒";
+		s.damage=10;
+    Sword s2=new Sword();
+		s.name="すりこ木";
+		s.damage=5;
+    Sword s3=new Sword();
+		s.name="出刃包丁";
+		s.damage=15;
+		h1.setSword(s);
+		h1.attack(ms[0]);
 
+		int sidx=new Random
+
+    Cleric cleric=new Cleric();
+		cleric.name="リリー";
+		cleric.hp-=20;
+		cleric.selfAid();
+	  cleric.pray(3);
 		h1.slip();
 		h2.slip();
+		cleric.heal(h1);
+		cleric.heal(h2);
+		cleric.pray(5);
 		h1.sit(3);
 		h1.sleep();
 	  h1.run();
