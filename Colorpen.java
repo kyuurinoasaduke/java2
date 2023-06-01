@@ -4,7 +4,7 @@ public class Colorpen{
 	int len;
 	//コンストラクタ
 	public Colorpen(){
-		this(白,10);
+		this("白",10);
 	}
 	public Colorpen(String color,int len){
 		//自クラスのコンストラクタの呼び出し
@@ -31,6 +31,7 @@ public class Colorpen{
 			str+="=";
 		}
 		str+=">";
+		str+="("+this.color+")";
 		System.out.println(str);
 	}
 }

@@ -1,17 +1,29 @@
 import java.util.*;
 public class ColorpenApp{
 	public static void main(String[] args){
-		Colorpen cp1 =new Colorpen("赤",5);
-		cp1.showStatus();
-		cp1.write();
-		cp1.showStatus();
-
-		Colorpen cp2=new Colorpen();
-		cp2.write();
-		cp2.showStatus();
-	
-		Colorpen cp3=new Colorpen("黄");
-	  cp2.len=7;
-		cp2.showStatus();
+    Scanner sc=new Scanner(System.in);
+		System.out.print("何色作成する>>");
+		int n=sc.nextInt();
+		Colorpen[] pens=new Colorpen[n];
+		for(int i=0;i<n;i++){
+			System.out.print("色>>");
+			String color=sc.next();
+			System.out.print("長さ>>");
+			int len=sc.nextInt();
+			Colorpen cp=new Colorpen(color,len);
+			pens[i]=cp;
+		}
+		while(true){
+		for(int i=0;i<pens.length;i++){
+			System.out.print(i+":");
+			pens[i].showStatus();
+		}
+		System.out.print("色を選択してください>>");
+		n=sc.nextInt();
+		if(n>=pens.length){
+			break;
+		}
+		pens[n].write();
+		}
 	}
 }
